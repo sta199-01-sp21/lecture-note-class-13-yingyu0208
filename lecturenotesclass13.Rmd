@@ -250,10 +250,10 @@ Create a 95% bootstrap confidence interval for the population *mean* price of
 
 First, identify the following:
 
-- Population: 
-- Parameter of interest:
-- Sample:
-- Sample size:
+- Population: 1-bedroom appartments in Manhattan
+- Parameter of interest: mean price
+- Sample: 1 bedroom apartments
+- Sample size: 20
 
 To create our confidence interval, we'll follow the four-step bootstrap
 scheme outlined in the slides using functions from `infer`.
