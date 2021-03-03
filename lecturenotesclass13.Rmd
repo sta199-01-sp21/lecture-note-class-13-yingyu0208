@@ -398,6 +398,14 @@ boot_prop_live <- mice %>%
   calculate(stat = "prop")
 ```
 
+or: (same thing)
+boot_prop_live <- mice %>% 
+  filter(treat == 1) %>% 
+  mutate(lived = if_else(died == 0, "yes", "no")) %>% 
+  specify(response = lived, success = "yes") %>% 
+  generate(reps = 10000, type = "bootstrap") %>% 
+  calculate(stat = "prop")
+
 ```{r practice_2_ci}
 ci_mice_lived <- get_ci(boot_prop_live, level = 0.90)
 ci_mice_lived
